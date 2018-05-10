@@ -419,6 +419,7 @@ __global__ void x14_shabal512_gpu_hash_64(uint32_t threads, uint32_t startNounce
 		XOR_W;
 		APPLY_P;
 
+		#pragma unroll
 		for (uint8_t i = 0; i < 3; i ++)
 		{
 			SWAP_BC;
@@ -448,6 +449,7 @@ __global__ void x14_shabal512_gpu_hash_64(uint32_t threads, uint32_t startNounce
 
 		uint32_t *outpHash = (uint32_t*)&g_hash[hashPosition << 3]; // [8 * hashPosition];
 
+		#pragma unroll
 		for (int i = 0; i < 16; i++)
 			outpHash[i] = Hash[i];
 	}
