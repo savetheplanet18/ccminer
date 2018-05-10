@@ -169,24 +169,7 @@ void quark_bmw512_gpu_hash_64_30(uint32_t threads, uint32_t startNounce, uint64_
 
 		// Init
 		uint64_t h[16];
-		/*
-		h[ 0] = SPH_C64(0x8081828384858687);
-		h[ 1] = SPH_C64(0x88898A8B8C8D8E8F);
-		h[ 2] = SPH_C64(0x9091929394959697);
-		h[ 3] = SPH_C64(0x98999A9B9C9D9E9F);
-		h[ 4] = SPH_C64(0xA0A1A2A3A4A5A6A7);
-		h[ 5] = SPH_C64(0xA8A9AAABACADAEAF);
-		h[ 6] = SPH_C64(0xB0B1B2B3B4B5B6B7);
-		h[ 7] = SPH_C64(0xB8B9BABBBCBDBEBF);
-		h[ 8] = SPH_C64(0xC0C1C2C3C4C5C6C7);
-		h[ 9] = SPH_C64(0xC8C9CACBCCCDCECF);
-		h[10] = SPH_C64(0xD0D1D2D3D4D5D6D7);
-		h[11] = SPH_C64(0xD8D9DADBDCDDDEDF);
-		h[12] = SPH_C64(0xE0E1E2E3E4E5E6E7);
-		h[13] = SPH_C64(0xE8E9EAEBECEDEEEF);
-		h[14] = SPH_C64(0xF0F1F2F3F4F5F6F7);
-		h[15] = SPH_C64(0xF8F9FAFBFCFDFEFF);
-		*/
+		
 
 		// Nachricht kopieren (Achtung, die Nachricht hat 64 Byte,
 		// BMW arbeitet mit 128 Byte!!!

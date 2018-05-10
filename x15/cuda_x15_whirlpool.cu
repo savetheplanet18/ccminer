@@ -33,8 +33,8 @@
 
 
 // Change with caution, used by shared mem fetch
-#define TPB80 384
-#define TPB64 384
+#define TPB80 512
+#define TPB64 512
 
 extern "C" {
 #include <sph/sph_whirlpool.h>

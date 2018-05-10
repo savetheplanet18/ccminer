@@ -4,7 +4,7 @@
 
 extern __device__ __device_builtin__ void __threadfence_block(void);
 
-#define TPB 128
+#define TPB 256
 
 __constant__ uint32_t c_PaddedMessage80[32]; // padded message (80 bytes + padding)
 

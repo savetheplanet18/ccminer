@@ -184,7 +184,7 @@ void x16_echo512_setBlock_80(void *endiandata)
 	cudaMemcpyToSymbol(c_PaddedMessage80, endiandata, sizeof(c_PaddedMessage80), 0, cudaMemcpyHostToDevice);
 }
 
-__global__ __launch_bounds__(128, 7) /* will force 72 registers */
+__global__ __launch_bounds__(256, 7) /* will force 72 registers */
 void x16_echo512_gpu_hash_80(uint32_t threads, uint32_t startNonce, uint64_t *g_hash)
 {
 	__shared__ uint32_t sharedMemory[1024];
@@ -205,7 +205,7 @@ void x16_echo512_gpu_hash_80(uint32_t threads, uint32_t startNonce, uint64_t *g_
 __host__
 void x16_echo512_cuda_hash_80(int thr_id, const uint32_t threads, const uint32_t startNonce, uint32_t *d_hash)
 {
-	const uint32_t threadsperblock = 128;
+	const uint32_t threadsperblock = 256;
 
 	dim3 grid((threads + threadsperblock-1)/threadsperblock);
 	dim3 block(threadsperblock);

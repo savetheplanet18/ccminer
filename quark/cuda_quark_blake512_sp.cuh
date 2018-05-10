@@ -654,7 +654,7 @@ __global__ void quark_blake512_gpu_hash_80_sp(uint32_t, uint32_t startNounce, ui
 __host__
 void quark_blake512_cpu_hash_64_sp(uint32_t threads, uint32_t startNounce, uint32_t *d_nonceVector, uint32_t *d_outputHash)
 {
-	const uint32_t threadsperblock = 32;
+	const uint32_t threadsperblock = 256;
 	dim3 grid((threads + threadsperblock-1)/threadsperblock);
 	dim3 block(threadsperblock);
 	quark_blake512_gpu_hash_64_sp <<<grid, block>>>(threads, startNounce, d_nonceVector, (uint2*)d_outputHash);
@@ -663,7 +663,7 @@ void quark_blake512_cpu_hash_64_sp(uint32_t threads, uint32_t startNounce, uint3
 __host__
 void quark_blake512_cpu_hash_80_sp(uint32_t threads, uint32_t startNounce, uint32_t *d_outputHash)
 {
-	const uint32_t threadsperblock = 64;
+	const uint32_t threadsperblock = 256;
 	dim3 grid((threads + threadsperblock - 1) / threadsperblock);
 	dim3 block(threadsperblock);
 	quark_blake512_gpu_hash_80_sp <<<grid, block>>>(threads, startNounce, (uint2*)d_outputHash);

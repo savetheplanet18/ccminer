@@ -418,8 +418,7 @@ __global__ void x14_shabal512_gpu_hash_64(uint32_t threads, uint32_t startNounce
 		INPUT_BLOCK_ADD;
 		XOR_W;
 		APPLY_P;
-
-		#pragma unroll
+		
 		for (uint8_t i = 0; i < 3; i ++)
 		{
 			SWAP_BC;

@@ -5,7 +5,7 @@
 #include "miner.h"
 #include "cuda_helper.h"
 
-#define TPB 128
+#define TPB 256
 
 uint32_t *d_state[MAX_GPUS];
 uint4 *d_temp4[MAX_GPUS];
